@@ -1,5 +1,5 @@
 <template>
-  <v-row align="center" justify="center" class="mt-16 mb-16">
+  <v-row align="center" justify="center" class="mt-16 mb-16" style="height: 60vh">
     <v-col style="display: flex;justify-content: flex-end;" md="3" >
       <div style="width: 16rem">
         <v-img :src="require('../assets/avatar.jpeg')" class="avatar"/>
