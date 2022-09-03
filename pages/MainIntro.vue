@@ -1,8 +1,8 @@
 <template>
-  <v-row align="center" justify="center" class="mt-16">
+  <v-row align="center" justify="center" class="mt-16 mb-16">
     <v-col style="display: flex;justify-content: flex-end;" md="3" >
       <div style="width: 16rem">
-        <v-img :src="require('../assets/avatar.jpeg')" style="border-radius: 30px"/>
+        <v-img :src="require('../assets/avatar.jpeg')" class="avatar"/>
       </div>
     </v-col>
     <v-col md="6" class="ml-16">
@@ -63,7 +63,22 @@ export default {
   font-size: 1.35rem;
 }
 
+.v-btn:hover {
+  background-color: #c7ff84;
+  color: #1A202C;
+  transition: 0.5s
+}
+
 ::v-deep .v-btn__content {
   padding: 0.5rem 1.5rem;
+}
+
+.avatar {
+  border-radius: 30px;
+  transition: 0.4s transform;
+}
+
+.avatar:hover {
+  transform: scale(1.2) translateX(10px);
 }
 </style>
