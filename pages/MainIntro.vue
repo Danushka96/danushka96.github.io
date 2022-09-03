@@ -19,10 +19,10 @@
       <div class="actions">
         <v-row>
           <v-col lg="6" sm="12">
-            <v-btn outlined rounded class="text-none">Get in touch</v-btn>
+            <v-btn outlined rounded class="text-none" height="50px">Get in touch</v-btn>
           </v-col>
           <v-col lg="6" sm="12">
-            <v-btn outlined rounded class="text-none">My resume</v-btn>
+            <v-btn outlined rounded class="text-none" height="50px">My resume</v-btn>
           </v-col>
         </v-row>
       </div>
