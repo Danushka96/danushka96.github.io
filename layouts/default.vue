@@ -1,5 +1,5 @@
 <template>
-  <v-app light style="background-color: #1A202C; padding-left: 12rem; padding-right: 12rem">
+  <v-app light style="background-color: #1A202C; padding-left: 6rem; padding-right: 6rem">
     <div style="margin-left: 90px; margin-right: 90px">
       <TopNavbar class="float-right"/>
     </div>
