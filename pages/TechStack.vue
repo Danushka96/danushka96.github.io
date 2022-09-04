@@ -3,14 +3,14 @@
     <div class="section-title text-uppercase text-center font-header">
       My Tech Stack
     </div>
-    <div class="stack mt-16 text-center">
-      <v-row justify="space-between" align="center" class="px-16">
+    <div class="stack mt-16">
+      <v-row align="center" justify="center" style="padding-left: 12rem; padding-right: 12rem">
         <v-col
           v-for="stack of stacks"
           :key="stack.name"
           sm="6"
           md="3"
-          class="justify-center align-center"
+          class="d-flex justify-center"
         >
           <v-tooltip bottom>
             <template v-slot:activator="{ on, attrs }">
@@ -44,7 +44,7 @@
               Backend Design
             </div>
             <div class="card-sub-title">
-              I create the design of your websites and applications.
+              Design reactive Java backends with Spring framework
             </div>
           </div>
         </v-col>
@@ -54,10 +54,10 @@
               mdi-webpack
             </v-icon>
             <div class="card-title font-semi-bold font-header mt-5">
-              Frontend Design
+              Frontend Develop
             </div>
             <div class="card-sub-title">
-              I create the design of your websites and applications.
+              Create the design of your websites and applications.
             </div>
           </div>
         </v-col>
@@ -67,16 +67,16 @@
               mdi-ip-network
             </v-icon>
             <div class="card-title font-semi-bold font-header mt-5">
-              Integration
+              Deployment
             </div>
             <div class="card-sub-title">
-              I create the design of your websites and applications.
+              Manage the deployment process with CI/CD pipelines
             </div>
           </div>
         </v-col>
       </v-row>
       <div class="description text-center" style="margin-top: 8rem">
-        Passionate about design and front-end web development, I am committed to carrying out the opportunities
+        Passionate about back-end development and design, I am committed to carrying out the opportunities
         entrusted to me by building modern and effective solutions. Rigorous and demanding, I take care to respect
         the best practices and standards of the Web. Being also curious and open, I like to experiment with the latest
         trends through daily monitoring.
@@ -152,6 +152,7 @@ export default {
 }
 
 .card-sub-title {
+  margin-top: 20px;
   font-size: 1.5rem;
   font-family: Overpass,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   letter-spacing: .01em;
@@ -163,6 +164,7 @@ export default {
   line-height: 1.625;
   font-family: Overpass,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   letter-spacing: .01em;
+  font-weight: 530;
 }
 
 .v-btn {
