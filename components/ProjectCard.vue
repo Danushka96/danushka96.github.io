@@ -1,6 +1,26 @@
 <template>
   <v-sheet class="pa-10" color="transparent" height="550px">
-    <v-img class="project-img" :src="project.image" style="border-radius: 20px" height="220px"/>
+    <v-img
+      class="project-img"
+      :src="project.image"
+      style="border-radius: 20px"
+      height="220px"
+      lazy-src=""
+      transition="fade-transition"
+    >
+      <template v-slot:placeholder>
+        <v-row
+          align="center"
+          class="fill-height ma-0"
+          justify="center"
+        >
+          <v-progress-circular
+            color="grey lighten-5"
+            indeterminate
+          ></v-progress-circular>
+        </v-row>
+      </template>
+    </v-img>
     <div class="card-title mt-5 font-header">
       {{ project?.title }}
         <v-icon v-if="project?.link" color="#c7ff84" @click="openLink(project?.link)">mdi-open-in-new</v-icon>
