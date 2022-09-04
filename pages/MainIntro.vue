@@ -2,7 +2,20 @@
   <v-row align="center" justify="center" class="mt-16 mb-16" style="height: 60vh">
     <v-col style="display: flex;justify-content: flex-end;" md="3" >
       <div style="width: 16rem">
-        <v-img :src="require('../assets/avatar.jpeg')" class="avatar"/>
+        <v-img :src="require('../assets/avatar.jpeg')" class="avatar" transition="fade-transition" lazy-src="">
+          <template v-slot:placeholder>
+            <v-row
+              align="center"
+              class="fill-height ma-0"
+              justify="center"
+            >
+              <v-progress-circular
+                color="grey lighten-5"
+                indeterminate
+              ></v-progress-circular>
+            </v-row>
+          </template>
+        </v-img>
       </div>
     </v-col>
     <v-col md="6" class="ml-16">
