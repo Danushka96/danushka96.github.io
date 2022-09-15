@@ -1,6 +1,6 @@
 <template>
-  <v-row align="center" justify="center" class="mt-16 mb-16" style="height: 60vh">
-    <v-col style="display: flex;justify-content: flex-end;" md="3" >
+  <v-row align="center" justify="center" class="mt-16 mb-16">
+    <v-col class="avatarContainer" md="3" >
       <div style="width: 16rem">
         <v-img :src="require('../assets/avatar.jpeg')" class="avatar" transition="fade-transition" lazy-src="">
           <template v-slot:placeholder>
@@ -31,10 +31,10 @@
       </div>
       <div class="actions">
         <v-row>
-          <v-col lg="6" sm="12">
+          <v-col lg="6" sm="12" class="buttonCol">
             <v-btn outlined rounded class="text-none" height="50px">Get in touch</v-btn>
           </v-col>
-          <v-col lg="6" sm="12">
+          <v-col lg="6" sm="12" class="buttonCol">
             <v-btn outlined rounded class="text-none" height="50px">My resume</v-btn>
           </v-col>
         </v-row>
@@ -93,5 +93,30 @@ export default {
 
 .avatar:hover {
   transform: scale(1.2) translateX(10px);
+}
+
+.avatarContainer {
+  display: flex;justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .avatarContainer {
+    justify-content: center
+  }
+  .subheading {
+    text-align: center !important;
+  }
+  .ml-16 {
+    margin-left: 3px !important;
+  }
+  .heading {
+    text-align: center !important;
+  }
+  .description {
+    text-align: center !important;
+  }
+  .buttonCol {
+    text-align: center !important;
+  }
 }
 </style>

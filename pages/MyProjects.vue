@@ -58,5 +58,10 @@ export default {
 </script>
 
 <style scoped>
-
+@media (max-width: 768px) {
+  .px-16 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
 </style>

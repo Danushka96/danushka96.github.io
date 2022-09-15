@@ -140,4 +140,11 @@ export default {
 ::v-deep .v-btn__content {
   padding: 0.5rem 3rem;
 }
+
+@media (max-width: 768px) {
+  .px-16 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
 </style>

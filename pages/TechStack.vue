@@ -4,7 +4,7 @@
       My Tech Stack
     </div>
     <div class="stack mt-16">
-      <v-row align="center" justify="center" style="padding-left: 12rem; padding-right: 12rem">
+      <v-row align="center" justify="center" class="stackContainer">
         <v-col
           v-for="stack of stacks"
           :key="stack.name"
@@ -191,5 +191,16 @@ export default {
   background-color: #c7ff84;
   color: #1A202C;
   transition: 0.5s
+}
+
+.stackContainer {
+  padding-left: 12rem; padding-right: 12rem
+}
+
+@media (max-width: 768px) {
+  .stackContainer {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 </style>
