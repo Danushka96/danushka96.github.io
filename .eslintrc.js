@@ -16,6 +16,6 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "max-attributes-per-line": "off",
+    'max-attributes-per-line': 'off'
   }
 }

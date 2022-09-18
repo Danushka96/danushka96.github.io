@@ -13,14 +13,14 @@
           class="d-flex justify-center"
         >
           <v-tooltip bottom>
-            <template v-slot:activator="{ on, attrs }">
+            <template #activator="{ on, attrs }">
               <v-card
                 v-bind="attrs"
-                v-on="on"
                 class="pa-5 text-center stack-img"
                 color="white"
                 width="8rem"
                 height="8rem"
+                v-on="on"
               >
                 <v-card-text>
                   <v-img
@@ -29,7 +29,7 @@
                     lazy-src=""
                     transition="fade-transition"
                   >
-                    <template v-slot:placeholder>
+                    <template #placeholder>
                       <v-row
                         align="center"
                         class="fill-height ma-0"
@@ -38,7 +38,7 @@
                         <v-progress-circular
                           color="grey lighten-5"
                           indeterminate
-                        ></v-progress-circular>
+                        />
                       </v-row>
                     </template>
                   </v-img>
@@ -97,7 +97,9 @@
         trends through daily monitoring.
       </div>
       <div class="download-resume text-center">
-        <v-btn outlined rounded class="text-none" height="50px">Download my resume</v-btn>
+        <v-btn outlined rounded class="text-none" height="50px">
+          Download my resume
+        </v-btn>
       </div>
     </div>
   </div>

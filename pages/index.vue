@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MainIntro/>
+    <MainIntro />
     <v-divider />
     <Projects />
     <v-divider />

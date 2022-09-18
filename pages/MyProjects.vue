@@ -1,7 +1,7 @@
 <template>
   <v-row class="mt-16 px-16">
-    <v-col md="6" v-for="project of projects" :key="project.title">
-      <ProjectCard :project="project"/>
+    <v-col v-for="project of projects" :key="project.title" md="6">
+      <ProjectCard :project="project" />
     </v-col>
   </v-row>
 </template>

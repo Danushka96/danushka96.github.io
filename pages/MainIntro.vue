@@ -1,9 +1,9 @@
 <template>
   <v-row align="center" justify="center" class="mt-16 mb-16">
-    <v-col class="avatarContainer" md="3" >
+    <v-col class="avatarContainer" md="3">
       <div style="width: 16rem">
         <v-img :src="require('../assets/avatar.jpeg')" class="avatar" transition="fade-transition" lazy-src="">
-          <template v-slot:placeholder>
+          <template #placeholder>
             <v-row
               align="center"
               class="fill-height ma-0"
@@ -12,17 +12,21 @@
               <v-progress-circular
                 color="grey lighten-5"
                 indeterminate
-              ></v-progress-circular>
+              />
             </v-row>
           </template>
         </v-img>
       </div>
     </v-col>
     <v-col md="6" class="ml-16">
-      <div><h1 class="subheading mb-3 font-body">Hello ! I'm Danushka Herath</h1></div>
+      <div>
+        <h1 class="subheading mb-3 font-body">
+          Hello ! I'm Danushka Herath
+        </h1>
+      </div>
       <div>
         <h2 class="heading font-body">
-          Software Engineer & <br/>
+          Software Engineer & <br>
           Front-end Developer
         </h2>
       </div>
@@ -32,10 +36,14 @@
       <div class="actions">
         <v-row>
           <v-col lg="6" sm="12" class="buttonCol">
-            <v-btn outlined rounded class="text-none" height="50px">Get in touch</v-btn>
+            <v-btn outlined rounded class="text-none" height="50px">
+              Get in touch
+            </v-btn>
           </v-col>
           <v-col lg="6" sm="12" class="buttonCol">
-            <v-btn outlined rounded class="text-none" height="50px">My resume</v-btn>
+            <v-btn outlined rounded class="text-none" height="50px">
+              My resume
+            </v-btn>
           </v-col>
         </v-row>
       </div>

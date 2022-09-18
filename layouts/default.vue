@@ -1,11 +1,12 @@
 <template>
   <v-app light class="container1">
     <div class="navbarContainer">
-      <TopNavbar class="float-right"/>
+      <TopNavbar class="float-right" />
+      <snackbar-queue/>
     </div>
     <v-main>
       <v-container class="pa-6">
-        <Nuxt/>
+        <Nuxt />
       </v-container>
     </v-main>
     <v-footer

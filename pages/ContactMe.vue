@@ -8,13 +8,14 @@
       touch and discuss it over a coffee!
     </div>
     <div class="form px-16 mb-16">
-      <v-form class="px-16" ref="form" v-model="valid">
+      <v-form ref="form" v-model="valid" class="px-16">
         <v-row>
           <v-col md="6">
             <div class="label text-uppercase font-header">
               First Name
             </div>
             <v-text-field
+              v-model="firstName"
               light
               placeholder="John"
               color="black"
@@ -30,6 +31,7 @@
               Last Name
             </div>
             <v-text-field
+              v-model="lastName"
               light
               placeholder="Doe"
               color="black"
@@ -47,6 +49,7 @@
               Email
             </div>
             <v-text-field
+              v-model="email"
               light
               placeholder="johndoe@gmail.com"
               color="black"
@@ -57,7 +60,7 @@
               :rules="[
                 (value) => (!!value && !!(value + '')?.length) || 'This field is required.',
                 (v) => !v?.length || !!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || 'Email is invalid'
-                ]"
+              ]"
             />
           </v-col>
         </v-row>
@@ -67,6 +70,7 @@
               Message
             </div>
             <v-textarea
+              v-model="message"
               light
               placeholder="Your message"
               color="black"
@@ -80,7 +84,16 @@
         </v-row>
         <v-row align="center" justify="center">
           <v-col class="text-center">
-            <v-btn rounded color="#c7ff84" height="50" :disabled="!valid" @click="sendEmail()">SEND</v-btn>
+            <v-btn
+              rounded
+              color="#c7ff84"
+              height="50"
+              :disabled="(!valid) || loading"
+              :loading="loading"
+              @click="sendEmail()"
+            >
+              SEND
+            </v-btn>
           </v-col>
         </v-row>
       </v-form>
@@ -89,15 +102,43 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'ContactMe',
   data: () => ({
-    valid: false
+    valid: false,
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+    loading: false
   }),
   methods: {
     sendEmail () {
       if (this.$refs.form.validate()) {
-        console.log('sening email')
+        const request = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          email: this.email,
+          message: this.message
+        }
+        this.loading = true
+        axios.post(`https://db4wfjxjcwmc3kz7spj3ruqt540rymwi.lambda-url.ap-southeast-1.on.aws/?subject=PortfolioContact&reply=${this.email}`, request).then(() => {
+          this.loading = false
+          this.$snackbar.show({
+            message: 'Hi, I received your message and will contact you ASAP. Thank you',
+            color: 'green',
+            timeout: 5000
+          })
+          this.$refs.form.reset()
+        }).catch(() => {
+          this.loading = false
+          this.$snackbar.show({
+            message: 'Oops, Something Went Wrong, Try again later...',
+            color: 'red',
+            timeout: 5000
+          })
+        })
       }
     }
   }
