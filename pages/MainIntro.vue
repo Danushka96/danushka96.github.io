@@ -26,12 +26,11 @@
       </div>
       <div>
         <h2 class="heading font-body">
-          Software Engineer & <br>
-          Front-end Developer
+          Software Engineer
         </h2>
       </div>
       <div class="description font-body mt-2">
-        I design and develop responsive, optimized and efficient websites. Currently available for freelance opportunities.
+        I design and develop responsive, optimized and efficient websites and backend APIs
       </div>
       <div class="actions">
         <v-row>
@@ -41,7 +40,7 @@
             </v-btn>
           </v-col>
           <v-col lg="6" sm="12" class="buttonCol">
-            <v-btn outlined rounded class="text-none" height="50px">
+            <v-btn outlined rounded class="text-none" height="50px" @click="openCVUrl()">
               My resume
             </v-btn>
           </v-col>
@@ -53,7 +52,12 @@
 
 <script>
 export default {
-  name: 'MainIntro'
+  name: 'MainIntro',
+  methods: {
+    openCVUrl () {
+      window.open('/Danushka_Herath_Software_Engineer_v4.pdf', '_blank')
+    }
+  }
 }
 </script>
 
